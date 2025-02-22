@@ -662,13 +662,23 @@
             
             <label for="email">Your Email:</label>
             <input type="email" id="email" name="email" required>
+
+		<label for="phone">Your Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
             
             <label for="story">Your Story:</label>
             <textarea id="story" name="story" rows="4" required></textarea>
             
             <label for="preferences">Music Preferences:</label>
             <input type="text" id="preferences" name="preferences">
-            
+		
+            <label for="package">Select Package:</label>
+            <select id="package" name="package" required>
+                <option value="">Select a package</option>
+                <option value="Basic">Basic - ₹950</option>
+                <option value="Standard">Standard - ₹1500</option>
+                <option value="Premium">Premium - ₹2000</option>
+       </select>     
             
 			<button type="submit">Submit Your Request</button>
         </form>
