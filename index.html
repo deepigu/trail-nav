@@ -1095,13 +1095,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         .pricing-box {
             background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
+            padding: 40px;
             border-radius: 10px;
             width: 300px;
+		min-height: 450px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
             border: 2px solid rgba(255, 255, 255, 0.1);
-        }
+        display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 
         .pricing-box:hover {
             transform: translateY(-5px);
@@ -1140,7 +1144,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         <!----------
         /* Updated pricing section with black background */
-          .pricing {
+      /*    .pricing {
             display: flex;
 
 			flex-direction: column;
@@ -1198,7 +1202,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         .pricing-box button:hover {
             transform: scale(1.05);
-        } --------->
+        } */--------->
 		
         @media screen and (max-width: 768px) {
             .menu-toggle {
@@ -1243,7 +1247,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 min-width: 90px;
             }
             .pricing-row {
-			flex-direction: row;
+			flex-direction: column; /* changed row into column */
 			align-items: center;
 			}
 			
