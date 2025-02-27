@@ -935,7 +935,22 @@
             <a href="https://www.facebook.com/share/1GXxmjQk9j/"><i class="fab fa-facebook"></i> Facebook</a>
         </div>
     </footer>
+       <script>
+	function zoomBox(element) {
+    // Remove zoom class from all boxes
+    document.querySelectorAll('.pricing-box').forEach(box => {
+        box.classList.remove('zoom');
+    });
     
+    // Add zoom effect to clicked box
+    element.classList.add('zoom');
+    
+    // Remove zoom effect after some time
+   /* setTimeout(() => {
+        element.classList.remove('zoom');
+    }, 500); */
+}
+</script>
     <script>
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('show');
