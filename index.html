@@ -1098,19 +1098,25 @@ document.addEventListener("DOMContentLoaded", function () {
             padding: 40px;
             border-radius: 10px;
             width: 300px;
-		min-height: 450px;
+			min-height: 450px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
             border: 2px solid rgba(255, 255, 255, 0.1);
         display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-
+    flex-direction: column;
+    justify-content: space-between;
+	cursor: pointer;
+		}
+.pricing-box.zoom {
+    transform: scale(1.1);
+    /*transition: transform 0.3s ease-in-out; */
+	box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
         .pricing-box:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
         }
+
 
         .pricing-box h3 {
             font-size: 22px;
@@ -1144,7 +1150,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         <!----------
         /* Updated pricing section with black background */
-      /*    .pricing {
+          .pricing {
             display: flex;
 
 			flex-direction: column;
@@ -1202,7 +1208,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         .pricing-box button:hover {
             transform: scale(1.05);
-        } */--------->
+        } --------->
 		
         @media screen and (max-width: 768px) {
             .menu-toggle {
@@ -1247,7 +1253,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 min-width: 90px;
             }
             .pricing-row {
-			flex-direction: column; /* changed row into column */
+			flex-direction: column; /*change row into column */
 			align-items: center;
 			}
 			
@@ -1883,47 +1889,45 @@ document.addEventListener("DOMContentLoaded", function () {
 	 <section id="pricing">
         <h2>Our Pricing Packages</h2>
         <div class="pricing">
-		<div class="pricing-row"> <!---now only added --->
-            <div class="pricing-box">
+		<div class="pricing-row" > <!---now only added --->
+            <div class="pricing-box" onclick="zoomBox(this)">
                 <h3>Basic</h3>
 				
                 <p class="price" style="font-size: 32px;"> ₹950</p>
-		                <span class="subtitle" style="font-size: 18px;">Per Song</span>
-                <p style="font-size: 16px;>Song Duration: 1-2 mins</p>
-                <p style="font-size: 16px;>2-3 Para Lyrics</p>
-                <p style="font-size: 16px;>3 Revisions only</p>
+				<span class="subtitle">Per Song</span>
+                <p style="font-size: 16px;">Song Duration: 1-2 mins</p>
+                <p style="font-size: 16px;">2-3 Para Lyrics</p>
+                <p style="font-size: 16px;">3 Revisions only</p>
                 <button>Start Now</button>
-            </div>
-            <div class="pricing-box">
+            </div> 
+            <div class="pricing-box" onclick="zoomBox(this)">
                 <h3>Standard</h3>
                 <p class="price" style="font-size: 32px;">₹1000</p>
-		                    <span class="subtitle" style="font-size: 18px;">Per Song</span>
-                <p style="font-size: 16px;>Song Duration: 2-3.5 mins</p>
-                <p style="font-size: 16px;>3-5 Para Lyrics</p>
-                <p style="font-size: 16px;>5 Revisions only</p>
+                <p style="font-size: 16px;">Song Duration: 2-3.5 mins</p>
+                <p style="font-size: 16px;">3-5 Para Lyrics</p>
+                <p style="font-size: 16px;">5 Revisions only</p>
                 <button>Start Now</button>
             </div>
+			<br> <br>
 			<div class="pricing-row">
-            <div class="pricing-box">
+            <div class="pricing-box" onclick="zoomBox(this)">
                 <h3>Premium</h3>
                 <p class="price" style="font-size: 32px;">₹1800</p>
-		                    <span class="subtitle" style="font-size: 18px;">Per Song</span>
-                <p style="font-size: 16px;>Song Duration: 3-4 mins</p>
-                <p style="font-size: 16px;>MAX 8 Para Lyrics</p>
-                <p style="font-size: 16px;>8 Revisions</p>
-                <p style="font-size: 16px;>Receive your song within 2 hours!</p>
-                <p style="font-size: 16px;> Complimentary video for your custom song.</p>
+                <p style="font-size: 16px;">Song Duration: 3-4 mins</p>
+                <p style="font-size: 16px;">MAX 8 Para Lyrics</p>
+                <p style="font-size: 16px;">8 Revisions</p>
+                <p style="font-size: 16px;">Receive your song within 2 hours!</p>
+                <p style="font-size: 16px;">Complimentary video for your custom song.</p>
                 <button>Start Now</button>
             </div>
-			<div class="pricing-box">
+			<div class="pricing-box" onclick="zoomBox(this)">
                 <h3>All in Premium</h3>
                 <p class="price" style="font-size: 32px;">₹2500</p>
-		                    <span class="subtitle" style="font-size: 18px;">Per Song</span>
-                <p style="font-size: 16px;>Song Duration: 5-6 mins</p>
-                <p style="font-size: 16px;>MAX 8 Para Lyrics</p>
-                <p style="font-size: 16px;>8 Revisions</p>
-                <p style="font-size: 16px;>Receive your song within 2 hours!</p>
-                <p style="font-size: 16px;>Complimentary video for your custom song.</p>
+                <p style="font-size: 16px;">Song Duration: 5-6 mins</p>
+                <p style="font-size: 16px;">MAX 8 Para Lyrics</p>
+                <p style="font-size: 16px;">8 Revisions</p>
+                <p style="font-size: 16px;">Receive your song within 2 hours!</p>
+                <p style="font-size: 16px;">Complimentary video for your custom song.</p>
                 <button>Start Now</button>
             </div>
 			
@@ -1982,6 +1986,23 @@ document.addEventListener("DOMContentLoaded", function () {
     </footer>
     
     <script>
+	function zoomBox(element) {
+    // Remove zoom class from all boxes
+    document.querySelectorAll('.pricing-box').forEach(box => {
+        box.classList.remove('zoom');
+    });
+    
+    // Add zoom effect to clicked box
+    element.classList.add('zoom');
+    
+    // Remove zoom effect after some time
+   /* setTimeout(() => {
+        element.classList.remove('zoom');
+    }, 500); */
+}
+</script>
+<script>
+
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('show');
         }
@@ -2253,6 +2274,9 @@ function showNotification(message) {
                 alert('There was an error submitting your request. Please try again.');
             });
         });
-    </script>
+    
+
+</script>
+
 </body>
 </html>
