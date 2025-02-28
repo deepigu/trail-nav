@@ -20,34 +20,70 @@
         #hero {
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             padding: 80px 20px;
             min-height: 60vh;
+            flex-wrap: wrap;
         }
 
         .hero-image {
             width: 45%;
-            max-width: 400px;
+            max-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
         }
 
         .hero-text {
-            width: 50%;
+            width: 45%;
             text-align: left;
         }
 
         .hero-text h2 {
-            font-size: 3em;
+            font-size: 2.2em;
             margin-bottom: 20px;
         }
 
         .hero-text p {
-            font-size: 1.2em;
+            font-size: 1em;
             line-height: 1.6;
             margin-bottom: 30px;
         }
 
         @media screen and (max-width: 768px) {
+            #hero {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero-image {
+                width: 50%;
+                min-width: 150px;
+            }
+
+            .hero-text {
+                width: 50%;
+                text-align: center;
+            }
+
+            .hero-text h2 {
+                font-size: 1.8em;
+            }
+
+            .hero-text p {
+                font-size: 0.9em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
             #hero {
                 flex-direction: column;
                 text-align: center;
@@ -55,12 +91,16 @@
 
             .hero-image {
                 width: 80%;
-                margin: 0 auto 20px;
+                margin-bottom: 20px;
             }
 
             .hero-text {
-                width: 100%;
+                width: 90%;
                 text-align: center;
+            }
+
+            .hero-text h2 {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -68,7 +108,7 @@
 <body>
     <section id="hero">
         <div class="hero-image">
-            <img src="istockphoto-539207375-1024x1024.jpg" alt="Phone playing music" style="width: 100%;">
+            <img src="istockphoto-539207375-1024x1024.jpg" alt="Phone playing music">
         </div>
         <div class="hero-text">
             <h2>Tell Us Your Story & Let's Turn It into Music!</h2>
@@ -78,4 +118,3 @@
     </section>
 </body>
 </html>
-
