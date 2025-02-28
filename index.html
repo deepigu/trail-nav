@@ -22,93 +22,181 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            padding: 80px 20px;
+            padding: 40px 20px;
             min-height: 60vh;
-            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
+        
         .hero-image {
             width: 45%;
             max-width: 300px;
-            display: flex;
-            justify-content: center;
+            padding: 0 15px;
         }
-
+        
         .hero-image img {
             width: 100%;
             height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-
+        
         .hero-text {
             width: 45%;
+            padding: 0 15px;
             text-align: left;
         }
-
+        
         .hero-text h2 {
             font-size: 2.2em;
             margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
-
+        
         .hero-text p {
             font-size: 1em;
             line-height: 1.6;
             margin-bottom: 30px;
         }
-
+        
+        .cta {
+            background: #FF8C00;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta:hover {
+            background: #FFA500;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0 15px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #FF8C00;
+        }
+        
+        /* Mobile responsiveness */
         @media screen and (max-width: 768px) {
-            #hero {
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: center;
-                text-align: center;
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+            
+            .logo {
+                margin-bottom: 10px;
+            }
+            
+            .nav-links {
+                width: 100%;
                 justify-content: center;
             }
-
-            .hero-image {
-                width: 50%;
-                min-width: 150px;
+            
+            .nav-links li {
+                margin: 0 10px;
             }
-
-            .hero-text {
-                width: 50%;
-                text-align: center;
+            
+            #hero {
+                padding: 30px 15px;
             }
-
+            
             .hero-text h2 {
                 font-size: 1.8em;
             }
-
+            
             .hero-text p {
                 font-size: 0.9em;
             }
         }
-
+        
+        /* This is the key change to maintain side-by-side on mobile */
         @media screen and (max-width: 480px) {
             #hero {
-                flex-direction: column;
-                text-align: center;
+                flex-direction: row; /* Keep it row instead of column */
+                flex-wrap: wrap;
+                gap: 10px;
             }
-
+            
+            .hero-image, .hero-text {
+                width: 48%; /* Almost half width each */
+                min-width: 140px;
+                padding: 0 5px;
+            }
+            
             .hero-image {
-                width: 80%;
-                margin-bottom: 20px;
+                margin-bottom: 0;
             }
-
+            
             .hero-text {
-                width: 90%;
-                text-align: center;
+                text-align: left;
             }
-
+            
             .hero-text h2 {
-                font-size: 1.5em;
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+            
+            .hero-text p {
+                font-size: 0.8em;
+                margin-bottom: 15px;
+            }
+            
+            .cta {
+                padding: 8px 16px;
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="logo">Melody Master Co</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#samples">Samples</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <section id="hero">
         <div class="hero-image">
-            <img src="istockphoto-539207375-1024x1024.jpg" alt="Phone playing music">
+            <img src="/api/placeholder/300/300" alt="Phone playing music">
         </div>
         <div class="hero-text">
             <h2>Tell Us Your Story & Let's Turn It into Music!</h2>
