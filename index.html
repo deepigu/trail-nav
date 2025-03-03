@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,77 +15,69 @@
             background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(253, 116, 108, 0.9));
             color: white;
             text-align: center;
-            background-image: url("valentine_s_day_couple_photography_ideas.jpg");
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
-            position: relative;
             overflow-x: hidden;
         }
-        
-        /* Overlay for background - darker shade */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(25, 42, 60, 0.9), rgba(200, 70, 70, 0.9));
-            z-index: -1;
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
         }
-        
-        /* Updated pricing section - always side-by-side */
+
+        p {
+            font-size: 18px;
+        }
+
+        /* Flexbox Layout for Side-by-Side Pricing Boxes */
         .pricing {
             display: flex;
-            flex-direction: row;
             justify-content: center;
             align-items: stretch;
-            width: 100%;
+            flex-wrap: wrap; /* Ensures responsiveness */
+            gap: 20px; /* Adds space between boxes */
             max-width: 1200px;
             margin: 0 auto;
-            padding: 10px;
+            padding: 20px;
             box-sizing: border-box;
-            gap: 15px;
         }
 
         .pricing-box {
             background: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 10px;
-            flex: 1;
-            min-width: 0; /* Prevents flex items from growing beyond container */
-            margin-bottom: 0;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            box-sizing: border-box;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             color: white;
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            text-align: center;
+            width: calc(25% - 20px); /* Ensures four boxes fit per row */
+            min-width: 250px; /* Prevents shrinking too much */
+            max-width: 280px; /* Prevents stretching too much */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
         }
 
         .pricing-box h3 {
             font-size: 22px;
             color: #ff9a8b;
-            margin-top: 0;
-            margin-bottom: 10px;
+            margin: 10px 0;
         }
 
         .pricing-box p {
             font-size: 14px;
-            margin: 4px 0;
-            line-height: 1.3;
+            line-height: 1.5;
         }
 
-        /* Make the price stand out */
         .pricing-box p:first-of-type {
             font-size: 32px;
             font-weight: bold;
-            margin: 10px 0 5px;
+            margin-bottom: 10px;
         }
 
         .pricing-box button {
@@ -100,58 +91,29 @@
             font-weight: 600;
             margin-top: 15px;
             width: 85%;
-            align-self: center;
         }
 
         /* Responsive adjustments */
-        @media screen and (max-width: 768px) {
-            .pricing {
-                flex-wrap: wrap;
-            }
-            
+        @media screen and (max-width: 1024px) {
             .pricing-box {
-                min-width: 200px;
-                margin-bottom: 15px;
+                width: calc(50% - 20px); /* Two per row on smaller screens */
             }
         }
 
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 600px) {
             .pricing-box {
-                flex: 1 0 100%;
+                width: 100%; /* Full width on mobile */
             }
-            
-            .pricing-box h3 {
-                font-size: 20px;
-            }
-            
-            .pricing-box p {
-                font-size: 12px;
-            }
-            
-            .pricing-box p:first-of-type {
-                font-size: 28px;
-            }
-        }
-
-        /* Hover effect for all screen sizes */
-        .pricing-box:hover, .pricing-box.zoom {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-            z-index: 1;
         }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBD8KDQJ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <header>
+
     <section id="pricing">
         <h2>Our Pricing Packages</h2>
         <p style="font-size:24px; margin-bottom: 30px;">Choose the plan that fits your needs:</p>
         <div class="pricing">
-            <div class="pricing-box" onclick="zoomBox(this)">
+            <div class="pricing-box">
                 <h3>Basic</h3>
                 <p><b>₹950</b></p>
                 <p>Per Song</p>
@@ -160,7 +122,7 @@
                 <p>3 Revisions only</p>
                 <button onclick="location.href='#request-song'">Start Now</button>
             </div>
-            <div class="pricing-box" onclick="zoomBox(this)">
+            <div class="pricing-box">
                 <h3>Standard</h3>
                 <p><b>₹1500</b></p>
                 <p>Per Song</p>
@@ -169,7 +131,7 @@
                 <p>5 Revisions only</p>
                 <button onclick="location.href='#request-song'">Start Now</button>
             </div>
-            <div class="pricing-box" onclick="zoomBox(this)">
+            <div class="pricing-box">
                 <h3>Premium</h3>
                 <p><b>₹2000</b></p>
                 <p>Per Song</p>
@@ -178,7 +140,7 @@
                 <p>Unlimited Revisions</p>
                 <button onclick="location.href='#request-song'">Start Now</button>
             </div>
-            <div class="pricing-box" onclick="zoomBox(this)">
+            <div class="pricing-box">
                 <h3>All in Premium</h3>
                 <p><b>₹2500</b></p>
                 <p>Per Song</p>
@@ -189,34 +151,6 @@
             </div>
         </div>
     </section>
-    <script>
-    // Function to add zoom effect to pricing boxes
-    function zoomBox(box) {
-        // First remove zoom class from all boxes
-        const allBoxes = document.querySelectorAll('.pricing-box');
-        allBoxes.forEach(b => b.classList.remove('zoom'));
-        
-        // Add zoom class to the clicked box
-        box.classList.add('zoom');
-        
-        // If on mobile, scroll to the zoomed box
-        if (window.innerWidth <= 576) {
-            box.scrollIntoView({behavior: 'smooth', block: 'center'});
-        }
-    }
 
-    // Run when the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        // Reset zoom when clicking elsewhere on the page
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.pricing-box')) {
-                const allBoxes = document.querySelectorAll('.pricing-box');
-                allBoxes.forEach(box => {
-                    box.classList.remove('zoom');
-                });
-            }
-        });
-    });
-    </script>
 </body>
 </html>
