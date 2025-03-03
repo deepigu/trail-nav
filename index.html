@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Melody Master Co - Custom Song Service</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -30,17 +28,18 @@
             font-size: 18px;
         }
 
-        /* Flexbox Layout for Side-by-Side Pricing Boxes */
+        /* Ensuring side-by-side alignment */
         .pricing {
             display: flex;
             justify-content: center;
             align-items: stretch;
-            flex-wrap: wrap; /* Ensures responsiveness */
-            gap: 20px; /* Adds space between boxes */
+            flex-wrap: nowrap; /* Prevents wrapping */
+            gap: 20px; /* Space between boxes */
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             box-sizing: border-box;
+            overflow-x: auto; /* Allows scrolling if needed */
         }
 
         .pricing-box {
@@ -52,7 +51,7 @@
             color: white;
             cursor: pointer;
             text-align: center;
-            width: calc(25% - 20px); /* Ensures four boxes fit per row */
+            flex: 1; /* Ensures equal size */
             min-width: 250px; /* Prevents shrinking too much */
             max-width: 280px; /* Prevents stretching too much */
             transition: transform 0.3s, box-shadow 0.3s;
@@ -95,12 +94,19 @@
 
         /* Responsive adjustments */
         @media screen and (max-width: 1024px) {
+            .pricing {
+                flex-wrap: wrap; /* Allows wrapping on smaller screens */
+                justify-content: center;
+            }
             .pricing-box {
-                width: calc(50% - 20px); /* Two per row on smaller screens */
+                width: calc(50% - 20px); /* Two per row on medium screens */
             }
         }
 
         @media screen and (max-width: 600px) {
+            .pricing {
+                flex-direction: column; /* Stacks boxes in a column */
+            }
             .pricing-box {
                 width: 100%; /* Full width on mobile */
             }
