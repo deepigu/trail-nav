@@ -35,24 +35,23 @@
             z-index: -1;
         }
         
-/* Updated pricing section for better mobile responsiveness */
+/* Updated pricing section with better spacing and layout */
 .pricing {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
+    gap: 30px;
+    width: 90%;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 20px 0;
 }
 
 .pricing-box {
     background: rgba(0, 0, 0, 0.8);
-    padding: 25px 15px;
+    padding: 30px;
     border-radius: 10px;
-    width: calc(25% - 20px); /* 4 columns on desktop */
-    min-height: 400px;
+    width: calc(48% - 30px); /* Two boxes side by side, wider */
+    min-height: 420px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     border: 2px solid rgba(255, 255, 255, 0.1);
@@ -60,16 +59,20 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
+    margin-top: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
+    font-weight: 400;
     color: white;
     cursor: pointer;
 }
 
 .pricing-box h3 {
-    font-size: 24px;
+    font-size: 26px;
     color: #ff9a8b;
-    margin: 0 0 15px 0;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 .pricing-box p {
@@ -78,12 +81,11 @@
     line-height: 1.4;
 }
 
-/* Price styling */
+/* Make the price stand out */
 .pricing-box p:first-of-type {
-    font-size: 36px;
+    font-size: 45px;
     font-weight: bold;
-    margin: 10px 0;
-    color: white;
+    margin: 15px 0 5px;
 }
 
 .pricing-box button {
@@ -95,8 +97,8 @@
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    transition: 0.3s;
     margin-top: 15px;
+    transition: transform 0.3s;
     width: 80%;
     align-self: center;
 }
@@ -105,60 +107,76 @@
     transform: scale(1.05);
 }
 
-/* Tablet view */
-@media screen and (max-width: 992px) {
-    .pricing-box {
-        width: calc(50% - 20px); /* 2 columns on tablets */
-    }
-}
-
-/* Mobile view */
-@media screen and (max-width: 576px) {
-    .pricing-box {
-        width: 100%; /* Full width on mobile */
-        min-height: auto;
-        padding: 20px 15px;
-        margin-bottom: 15px;
-    }
-    
-    .pricing-box h3 {
-        font-size: 22px;
-        margin-bottom: 10px;
-    }
-    
-    .pricing-box p {
-        font-size: 16px;
-        margin: 6px 0;
-    }
-    
-    .pricing-box p:first-of-type {
-        font-size: 32px;
-        margin: 10px 0;
-    }
-    
-    /* Make button more touchable on mobile */
-    .pricing-box button {
-        width: 100%;
-        padding: 15px;
-        margin-top: 15px;
-        font-size: 16px;
-    }
-}
-
-/* Zoom effect on hover and click */
-.pricing-box:hover, .pricing-box.zoom {
+.pricing-box.zoom {
     transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
 }
 
-/* Ensure buttons have consistent styling */
-.pricing-box button {
-    background: linear-gradient(95deg, #059dff, #6549d5, #e33fa1, #fb5343);
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: transform 0.3s;
-    border: none;
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+    .pricing {
+        width: 95%;
+        gap: 20px;
+    }
+    
+    .pricing-box {
+        width: calc(48% - 20px);
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pricing {
+        gap: 15px;
+    }
+    
+    .pricing-box {
+        width: calc(48% - 15px);
+        min-height: 400px;
+        padding: 20px;
+    }
+    
+    .pricing-box h3 {
+        font-size: 22px;
+    }
+    
+    .pricing-box p {
+        font-size: 15px;
+    }
+    
+    .pricing-box p:first-of-type {
+        font-size: 38px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .pricing {
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .pricing-box {
+        width: 95%;
+        margin: 10px auto;
+        min-height: auto;
+        padding: 25px;
+    }
+    
+    .pricing-box h3 {
+        font-size: 24px;
+    }
+    
+    .pricing-box p {
+        font-size: 16px;
+    }
+    
+    .pricing-box p:first-of-type {
+        font-size: 45px;
+    }
+    
+    .pricing-box button {
+        width: 80%;
+    }
 }
 </style>
 
