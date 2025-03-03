@@ -1,3 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Melody Master Co - Custom Song Service</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <style>
+	body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(253, 116, 108, 0.9));
+            color: white;
+            text-align: center;
+            background-image: url("valentine_s_day_couple_photography_ideas.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Overlay for background - darker shade */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(25, 42, 60, 0.9), rgba(200, 70, 70, 0.9));
+            z-index: -1;
+        }
+        
+/* Updated pricing section for better mobile responsiveness */
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.pricing-box {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 25px 15px;
+    border-radius: 10px;
+    width: calc(25% - 20px); /* 4 columns on desktop */
+    min-height: 400px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+}
+
+.pricing-box h3 {
+    font-size: 24px;
+    color: #ff9a8b;
+    margin: 0 0 15px 0;
+}
+
+.pricing-box p {
+    font-size: 16px;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+/* Price styling */
+.pricing-box p:first-of-type {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: white;
+}
+
+.pricing-box button {
+    background: linear-gradient(95deg, #059dff, #6549d5, #e33fa1, #fb5343);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-top: 15px;
+    width: 80%;
+    align-self: center;
+}
+
+.pricing-box button:hover {
+    transform: scale(1.05);
+}
+
+/* Tablet view */
+@media screen and (max-width: 992px) {
+    .pricing-box {
+        width: calc(50% - 20px); /* 2 columns on tablets */
+    }
+}
+
+/* Mobile view */
+@media screen and (max-width: 576px) {
+    .pricing-box {
+        width: 100%; /* Full width on mobile */
+        min-height: auto;
+        padding: 20px 15px;
+        margin-bottom: 15px;
+    }
+    
+    .pricing-box h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .pricing-box p {
+        font-size: 16px;
+        margin: 6px 0;
+    }
+    
+    .pricing-box p:first-of-type {
+        font-size: 32px;
+        margin: 10px 0;
+    }
+    
+    /* Make button more touchable on mobile */
+    .pricing-box button {
+        width: 100%;
+        padding: 15px;
+        margin-top: 15px;
+        font-size: 16px;
+    }
+}
+
+/* Zoom effect on hover and click */
+.pricing-box:hover, .pricing-box.zoom {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Ensure buttons have consistent styling */
+.pricing-box button {
+    background: linear-gradient(95deg, #059dff, #6549d5, #e33fa1, #fb5343);
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.3s;
+    border: none;
+}
+</style>
+
+		</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBD8KDQJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+<section id="pricing">
+    <h2>Our Pricing Packages</h2>
+    <p style="font-size:24px; margin-bottom: 30px;">Choose the plan that fits your needs:</p>
+    <div class="pricing">
+        <div class="pricing-box" onclick="zoomBox(this)">
+            <h3>Basic</h3>
+            <p><b>₹950</b></p>
+            <p>Per Song</p>
+            <p>Song Duration: 1-2 mins</p>
+            <p>2-3 Para Lyrics</p>
+            <p>3 Revisions only</p>
+            <button onclick="location.href='#request-song'">Start Now</button>
+        </div>
+        <div class="pricing-box" onclick="zoomBox(this)">
+            <h3>Standard</h3>
+            <p><b>₹1500</b></p>
+            <p>Per Song</p>
+            <p>Song Duration: 2-3.5 mins</p>
+            <p>3-5 Para Lyrics</p>
+            <p>5 Revisions only</p>
+            <button onclick="location.href='#request-song'">Start Now</button>
+        </div>
+        <div class="pricing-box" onclick="zoomBox(this)">
+            <h3>Premium</h3>
+            <p><b>₹2000</b></p>
+            <p>Per Song</p>
+            <p>Song Duration: 4-5 mins</p>
+            <p>Max 8 Para Lyrics</p>
+            <p>Unlimited Revisions</p>
+            <button onclick="location.href='#request-song'">Start Now</button>
+        </div>
+        <div class="pricing-box" onclick="zoomBox(this)">
+            <h3>All in Premium</h3>
+            <p><b>₹2500</b></p>
+            <p>Per Song</p>
+            <p>Song Duration: 5-8 mins</p>
+            <p>Max 10 Para Lyrics</p>
+            <p>Unlimited Revisions</p>
+            <button onclick="location.href='#request-song'">Start Now</button>
+        </div>
+    </div>
+</section>
+<script>
 // Function to add zoom effect to pricing boxes
 function zoomBox(box) {
     // First remove zoom class from all boxes
@@ -53,3 +267,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Reapply effects on window resize
     window.addEventListener('resize', applyHoverEffects);
 });
+</script>
+</body>
+</html>
