@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,167 +19,47 @@
             background-position: center;
             overflow-x: hidden;
         }
+<style>
+    .pricing {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: nowrap; /* Keep side-by-side for desktop */
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-        
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Melody Master Co - Custom Song Service</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(253, 116, 108, 0.9));
-            color: white;
-            text-align: center;
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            overflow-x: hidden;
-        }
+    .pricing-box {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        flex: 1; /* Ensures equal size */
+        min-width: 250px; /* Prevents shrinking too much */
+        max-width: 280px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+    }
 
-        h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
+    .pricing-box:hover {
+        transform: scale(1.05);
+    }
 
-        p {
-            font-size: 18px;
-        }
-
-        /* Ensuring side-by-side alignment */
+    /* ✨ Modify layout ONLY for phones (≤600px width) */
+    @media screen and (max-width: 600px) {
         .pricing {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            flex-wrap: nowrap; /* Prevents wrapping */
-            gap: 20px; /* Space between boxes */
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            overflow-x: auto; /* Allows scrolling if needed */
+            flex-wrap: wrap; /* Allow wrapping */
+            justify-content: space-around;
         }
 
         .pricing-box {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            color: white;
-            cursor: pointer;
-            text-align: center;
-            flex: 1; /* Ensures equal size */
-            min-width: 250px; /* Prevents shrinking too much */
-            max-width: 280px; /* Prevents stretching too much */
-            transition: transform 0.3s, box-shadow 0.3s;
+            flex: 1 0 45%; /* Ensures two boxes per row */
+            max-width: 45%; /* Limit width to fit 2 per row */
         }
+    }
+</style>
 
-        .pricing-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
-        }
-
-        .pricing-box h3 {
-            font-size: 22px;
-            color: #ff9a8b;
-            margin: 10px 0;
-        }
-
-        .pricing-box p {
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .pricing-box p:first-of-type {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .pricing-box button {
-            background: linear-gradient(95deg, #059dff, #6549d5, #e33fa1, #fb5343);
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            margin-top: 15px;
-            width: 85%;
-        }
-
-        /* Responsive adjustments */
-        @media screen and (max-width: 1024px) {
-            .pricing {
-                flex-wrap: wrap; /* Allows wrapping on smaller screens */
-                justify-content: center;
-            }
-            .pricing-box {
-                width: calc(50% - 20px); /* Two per row on medium screens */
-            }
-        }
-
-        @media screen and (max-width: 600px) {
-            .pricing {
-                flex-direction: column; /* Stacks boxes in a column */
-            }
-            .pricing-box {
-                width: 100%; /* Full width on mobile */
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <section id="pricing">
-        <h2>Our Pricing Packages</h2>
-        <p style="font-size:24px; margin-bottom: 30px;">Choose the plan that fits your needs:</p>
-        <div class="pricing">
-            <div class="pricing-box">
-                <h3>Basic</h3>
-                <p><b>₹950</b></p>
-                <p>Per Song</p>
-                <p>Song Duration: 1-2 mins</p>
-                <p>2-3 Para Lyrics</p>
-                <p>3 Revisions only</p>
-                <button onclick="location.href='#request-song'">Start Now</button>
-            </div>
-            <div class="pricing-box">
-                <h3>Standard</h3>
-                <p><b>₹1500</b></p>
-                <p>Per Song</p>
-                <p>Song Duration: 2-3.5 mins</p>
-                <p>3-5 Para Lyrics</p>
-                <p>5 Revisions only</p>
-                <button onclick="location.href='#request-song'">Start Now</button>
-            </div>
-            <div class="pricing-box">
-                <h3>Premium</h3>
-                <p><b>₹2000</b></p>
-                <p>Per Song</p>
-                <p>Song Duration: 4-5 mins</p>
-                <p>Max 8 Para Lyrics</p>
-                <p>Unlimited Revisions</p>
-                <button onclick="location.href='#request-song'">Start Now</button>
-            </div>
-            <div class="pricing-box">
-                <h3>All in Premium</h3>
-                <p><b>₹2500</b></p>
-                <p>Per Song</p>
-                <p>Song Duration: 5-8 mins</p>
-                <p>Max 10 Para Lyrics</p>
-                <p>Unlimited Revisions</p>
-                <button onclick="location.href='#request-song'">Start Now</button>
-            </div>
-        </div>
-    </section>
     </style>
 </head>
 <body>
